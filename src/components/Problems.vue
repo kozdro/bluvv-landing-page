@@ -6,8 +6,9 @@
         v-for="(problem, index) in problems"
         :key="index"
         class="flip-card basis-1/4 h-96 cursor-pointer"
+        @click="toggleFlip(index)"
       >
-        <div class="flip-card-inner relative w-full h-full transition-transform duration-700" :class="{ 'rotate-y': flippedCard === index }">
+        <div class="flip-card-inner relative w-full h-full transition-transform duration-700" :class="{ 'rotate-y': flippedStates[index] }">
           <div class="flip-card-front">
             <img
               :src="problem.icon"
@@ -110,19 +111,19 @@ const headingColors = [
 ]
 
 const flipRef = ref<HTMLElement | null>(null)
-const flippedCard = ref<number | null>(null)
+const flippedStates = ref<boolean[]>(problems.map(() => false))
 
 let observer: IntersectionObserver | null = null
+
+const toggleFlip = (index: number) => (flippedStates.value[index] = !flippedStates.value[index])
 
 onMounted(() => {
   observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
         // NOTE: Flip the first card
-        flippedCard.value = 0
-        setTimeout(() => {
-          flippedCard.value = null
-        }, 1200)
+        toggleFlip(0)
+        setTimeout(() => toggleFlip(0), 1200)
       }
     },
     // NOTE: Trigger when 50% of the section is visible
@@ -144,10 +145,6 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .flip-card {
   perspective: 1000px;
-
-  &:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
 
   &-inner {
     transform-style: preserve-3d;
