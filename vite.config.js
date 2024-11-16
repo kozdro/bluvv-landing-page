@@ -27,5 +27,8 @@ export default defineConfig({
       .use('vue-svg-loader')
       .loader('vue-svg-loader');
   },
-  base: '/bluvv-landing-page/'
+  base: '/bluvv-landing-page/',
+  server: {
+    historyApiFallback: true,
+  },
 })

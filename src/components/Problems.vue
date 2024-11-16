@@ -40,8 +40,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
-import Solutions from '@/components/Solutions.vue'
-
 import FakeIcon from '@/assets/icons/Fake.svg'
 import DecisionIcon from '@/assets/icons/Decision.svg'
 import StoreIcon from '@/assets/icons/Store.svg'
