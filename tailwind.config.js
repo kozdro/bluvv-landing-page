@@ -29,8 +29,8 @@ export default {
       white: '#FFFFFF',
     },
     fontFamily: {
-      primary: ['Nunito Sans', 'sans-serif'],
-      secondary: ['Open Sans', 'sans-serif'],
+      primary: ['Montserrat', 'sans-serif'],
+      secondary: ['Lato', 'sans-serif'],
     },
     screens: {
     'xs': '375px',
