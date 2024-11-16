@@ -3,7 +3,7 @@
     <div class="container flex flex-col md:flex-row gap-10">
       <div class="basis-1/2">
         <h1 v-text="'Transforming Beauty eCommerce'"></h1>
-        <p class="text-lg" v-text="'A revolutionary platform where users discover, try, and review products while brands build authentic connections with their audience.'"></p>
+        <p class="text-lg" v-text="'A revolutionary app where users discover, try, and review products while brands build authentic connections with their audience.'"></p>
         <div class="space-x-4">
           <Button
             :variant="ButtonVariant.OutlineTertiary"

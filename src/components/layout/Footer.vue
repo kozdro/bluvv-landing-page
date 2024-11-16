@@ -15,7 +15,7 @@
         <div>
           <h4 class="text-lavender-old" v-text="'About Us'" />
           <p>
-            Bluvv is revolutionizing social eCommerce by combining video reviews, earnings by using the app, and our modern technologies (AI, AR). Our platform empowers users with authentic insights and smarter purchasing decisions while fostering a thriving community of conscious shoppers and brands.
+            Bluvv is revolutionizing social eCommerce by combining video reviews, earnings by using the app, and our modern technologies (AI, AR). Our application empowers users with authentic insights and smarter purchasing decisions while fostering a thriving community of conscious shoppers and brands.
           </p>
         </div>
 

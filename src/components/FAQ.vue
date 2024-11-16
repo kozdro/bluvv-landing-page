@@ -6,7 +6,7 @@
         <template #title>
           What is Bluvv?
         </template>
-        <p v-text="'Bluvv is a beauty shopping platform where you can explore authentic video reviews, shop for curated products, and share your experience.'" />
+        <p v-text="'Bluvv is a beauty shopping app where you can explore authentic video reviews, shop for curated products, and share your experience.'" />
       </AccordionItem>
       <AccordionItem>
         <template #title>
