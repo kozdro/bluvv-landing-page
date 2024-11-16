@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 v-text="'Get in Touch'" />
-    <p class="subheading" v-text="'Have questions or want to get involved? We\'d love to hear from you!'" />
+    <p v-text="'Have questions or want to get involved? We\'d love to hear from you!'" />
     <form class="contact-form max-w-lg mx-auto space-y-4">
       <input
         type="text"

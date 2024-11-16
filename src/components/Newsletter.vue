@@ -3,7 +3,7 @@
     <div class="container flex items-center gap-20">
       <div class="basis-1/3">
         <h2 class="mt-6" v-text="'Stay in the Loop'" />
-        <p class="subheading" v-text="'Sign up for our newsletter to get the latest updates and be the first to know when we launch.'" />
+        <p v-text="'Sign up for our newsletter to get the latest updates and be the first to know when we launch.'" />
       </div>
       <div class="newsletter-form flex-1 flex flex-col md:flex-row gap-4 h-12">
         <input

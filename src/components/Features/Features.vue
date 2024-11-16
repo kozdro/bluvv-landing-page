@@ -1,21 +1,23 @@
 <template>
-  <section class="features container py-16">
-    <h2 data-aos="fade-up" class="mb-12 text-black flex justify-center">
-      What makes
-      <Logo class="w-min h-16 text-lavender-deep relative bottom-4" />
-      unique?
-    </h2>
-    <div class="flex flex-col gap-10">
-      <FeatureCard
-        v-for="(feature, index) in features"
-        :key="feature.title"
-        :title="feature.title"
-        :description="feature.description"
-        :image="feature.image"
-        :reverse="index % 2 !== 0"
-        :delay="(index + 1) * 100"
-        data-aos="fade-up"
-      />
+  <section class="features py-16 relative z-10 bg-white">
+    <div class="container">
+      <h2 data-aos="fade-up" class="mb-12 text-black flex justify-center">
+        What makes
+        <Logo class="w-min h-16 text-lavender-deep relative bottom-4" />
+        unique?
+      </h2>
+      <div class="flex flex-col gap-10">
+        <FeatureCard
+          v-for="(feature, index) in features"
+          :key="feature.title"
+          :title="feature.title"
+          :description="feature.description"
+          :image="feature.image"
+          :reverse="index % 2 !== 0"
+          :delay="(index + 1) * 100"
+          data-aos="fade-up"
+        />
+      </div>
     </div>
   </section>
 </template>

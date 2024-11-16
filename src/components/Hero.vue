@@ -1,6 +1,6 @@
 <template>
-  <section class="bluvv-gradient flex justify-between items-center py-32 text-white">
-    <div class="container flex flex-col md:flex-row gap-10">
+  <section class="bluvv-gradient flex justify-between items-center py-16 text-white relative">
+    <div class="container flex flex-col md:flex-row gap-10 my-28">
       <div class="basis-1/2">
         <h1 v-text="'Transforming Beauty eCommerce'"></h1>
         <p class="text-lg" v-text="'A revolutionary app where users discover, try, and review products while brands build authentic connections with their audience.'"></p>
@@ -21,23 +21,21 @@
           />
         </div>
       </div>
+    </div>
 
-      <div class="basis-1/2">
-        <div class="relative">
-          <img
-            src="https://via.placeholder.com/600x400"
-            alt="App Mockup"
-            class="rounded-xl shadow-2xl"
-          />
-          <div class="absolute inset-0 bg-gradient-to-br from-secondary to-lavender-gray opacity-30 rounded-xl" />
-        </div>
-      </div>
+    <div class="absolute -bottom-8 right-20">
+      <img
+        :src="Mockups"
+        alt="App Mockups"
+        class="scale-110"
+      >
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import Button from '@/components/shared/Button.vue'
+import Mockups from '@/assets/Mockups.svg'
 
 import { ButtonVariant, ButtonWidth } from '@/types'
 
