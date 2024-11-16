@@ -1,0 +1,45 @@
+@layer base {
+  h1, h2, h3, h4, h5 {
+    @apply font-primary mb-4;
+  }
+
+  h1, h2, h3 {
+    @apply font-bold;
+  }
+
+  h4, h5 {
+    @apply font-semibold;
+  }
+ 
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @pply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply font-secondary text-lavender-old text-base mb-4;
+  }
+
+  .router-link-active {
+    @apply underline;
+  }
+
+  .subheading {
+    @apply text-xl mb-6;
+  }
+}

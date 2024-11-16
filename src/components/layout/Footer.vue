@@ -1,0 +1,66 @@
+<template>
+  <footer class="bg-peach pt-16 pb-4">
+    <div class="container flex flex-col gap-8">
+      <div>
+        <h3 class="text-lavender-old" v-text="'Ready to join the revolution?'" />
+        <Button
+          :width="ButtonWidth.Auto"
+          :variant="ButtonVariant.Secondary"
+          href="/contact"
+          label="Contact Us"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-40 text-center md:text-left mt-4">
+        <div>
+          <h4 class="text-lavender-old" v-text="'About Us'" />
+          <p>
+            Bluvv is revolutionizing social eCommerce by combining video reviews, earnings by using the app, and our modern technologies (AI, AR). Our platform empowers users with authentic insights and smarter purchasing decisions while fostering a thriving community of conscious shoppers and brands.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lavender-old" v-text="'Quick Links'" />
+          <ul class="flex flex-col gap-2">
+            <li>
+              <RouterLink
+                to="/"
+                class="text-lavender-old font-secondary hover:underline"
+                v-text="'Home'"
+              />
+            </li>
+            <li>
+              <RouterLink
+                to="/about-us"
+                class="text-lavender-old font-secondary hover:underline"
+                v-text="'About Us'"
+              />
+            </li>
+            <li>
+              <RouterLink
+                to="/contact"
+                class="text-lavender-old font-secondary hover:underline"
+                v-text="'Contact'"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col text-center text-lavender-old font-secondary text-sm">
+        <div class="flex justify-center items-center">
+          © {{ new Date().getFullYear() }}
+          <Logo class="w-min h-10 text-lavender-deep" />
+        </div>
+        <span v-text="'All rights reserved.'" />
+      </div>
+    </div>
+  </footer>
+</template>
+
+<script setup lang="ts">
+import Button from '@/components/shared/Button.vue'
+import Logo from '@/components/shared/Logo.vue'
+
+import { ButtonWidth, ButtonVariant } from '@/types'
+</script>

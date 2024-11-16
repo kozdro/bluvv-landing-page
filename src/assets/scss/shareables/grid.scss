@@ -1,0 +1,4 @@
+@mixin Container {
+  @apply px-4 w-full mx-auto lg:px-[108px];
+  max-width: theme('sizing.grid.container');
+}

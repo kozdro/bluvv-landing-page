@@ -1,0 +1,21 @@
+@layer utilities {
+  .line-clamp-ellipsis {
+    @include LineClampEllipsis;
+  }
+  
+  .line-clamp-ellipsis-3 {
+    @include LineClampEllipsis(3);
+  }
+
+  .line-clamp-ellipsis-4 {
+    @include LineClampEllipsis(4);
+  }
+
+  .container {
+    @include Container;
+  }
+
+  .bluvv-gradient {
+    @include BluvvGradient;
+  }
+}

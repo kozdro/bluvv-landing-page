@@ -1,0 +1,12 @@
+body,
+html {
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rotate-y {
+  transform: rotateY(180deg);
+}
