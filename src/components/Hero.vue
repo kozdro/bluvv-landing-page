@@ -2,8 +2,8 @@
   <section class="bluvv-gradient flex justify-between items-center py-16 text-white relative">
     <div class="container flex flex-col md:flex-row gap-10 my-28">
       <div class="basis-1/2">
-        <h1 v-text="'Transforming Beauty eCommerce'"></h1>
-        <p class="text-lg" v-text="'A revolutionary app where users discover, try, and review products while brands build authentic connections with their audience.'"></p>
+        <h1 v-text="'Transforming Beauty eCommerce'" />
+        <p class="text-lg" v-text="'A revolutionary app where users discover, try, and review products while brands build authentic connections with their audience.'" />
         <div class="space-x-4">
           <Button
             :variant="ButtonVariant.OutlineTertiary"

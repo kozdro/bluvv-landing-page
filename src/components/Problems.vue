@@ -40,6 +40,9 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../tailwind.config'
+
 import FakeIcon from '@/assets/icons/Fake.svg'
 import DecisionIcon from '@/assets/icons/Decision.svg'
 import StoreIcon from '@/assets/icons/Store.svg'
@@ -48,9 +51,6 @@ import AuthenticIcon from '@/assets/icons/Authentic.svg'
 import VideoIcon from '@/assets/icons/Video.svg'
 import PersonalizationIcon from '@/assets/icons/Personalization.svg'
 import ConsciousIcon from '@/assets/icons/Conscious.svg'
-
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../tailwind.config'
 
 const problems = [
   {
@@ -110,6 +110,7 @@ const headingColors = [
 
 const flipRef = ref<HTMLElement | null>(null)
 const flippedStates = ref<boolean[]>(problems.map(() => false))
+const isFirstCardFlipped = ref<boolean>(false)
 
 let observer: IntersectionObserver | null = null
 
@@ -118,10 +119,14 @@ const toggleFlip = (index: number) => (flippedStates.value[index] = !flippedStat
 onMounted(() => {
   observer = new IntersectionObserver(
     ([entry]) => {
-      if (entry.isIntersecting) {
+      if (!isFirstCardFlipped.value && entry.isIntersecting) {
         // NOTE: Flip the first card
         toggleFlip(0)
-        setTimeout(() => toggleFlip(0), 1200)
+        
+        setTimeout(() => {
+          toggleFlip(0)
+          isFirstCardFlipped.value = true
+        }, 1200)
       }
     },
     // NOTE: Trigger when 50% of the section is visible
