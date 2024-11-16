@@ -1,11 +1,10 @@
 body,
 html {
-  @apply overflow-x-hidden;
+  @apply overflow-x-hidden antialiased;
   text-rendering: optimizeLegibility;
   font-smooth: always;
   font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
 }
 
 .rotate-y {

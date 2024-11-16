@@ -52,6 +52,8 @@ import VideoIcon from '@/assets/icons/Video.svg'
 import PersonalizationIcon from '@/assets/icons/Personalization.svg'
 import ConsciousIcon from '@/assets/icons/Conscious.svg'
 
+import { useDevice } from 'next-vue-device-detector'
+
 const problems = [
   {
     title: 'Manipulated reviews and sponsored ads',
@@ -108,6 +110,8 @@ const headingColors = [
   themeColors.blue.blizzard
 ]
 
+const device = useDevice()
+
 const flipRef = ref<HTMLElement | null>(null)
 const flippedStates = ref<boolean[]>(problems.map(() => false))
 const isFirstCardFlipped = ref<boolean>(false)
@@ -129,8 +133,8 @@ onMounted(() => {
         }, 1200)
       }
     },
-    // NOTE: Trigger when 50% of the section is visible
-    { threshold: 0.5 }
+    // NOTE: Trigger when X% of the section is visible
+    { threshold: device.mobile ? 0.25 : 0.5 }
   )
 
   if (flipRef.value) {
