@@ -41,8 +41,6 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 
-import { Icon, getIcon } from '@/helpers/getIcon'
-
 import { ButtonVariant, ButtonWidth } from '@/types'
 
 const ButtonVariantClasses = {
@@ -122,7 +120,4 @@ const removeActiveClass = (event: MouseEvent) => {
     (event.currentTarget as HTMLElement).classList.remove(...classes)
   }
 }
-
-const leftIconComponent = getIcon(props.leftIcon)
-const rightIconComponent = getIcon(props.rightIcon)
 </script>

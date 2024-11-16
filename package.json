@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "aos": "^2.3.4",
@@ -24,6 +24,7 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9.14.0",
     "eslint-plugin-vue": "^9.30.0",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.4.49",
     "prettier": "^3.3.3",
     "sass-embedded": "^1.80.7",
