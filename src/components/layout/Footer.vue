@@ -50,7 +50,7 @@
       <div class="flex flex-col text-center text-lavender-old font-secondary text-sm">
         <div class="flex justify-center items-center">
           © {{ new Date().getFullYear() }}
-          <Logo class="w-min h-10 text-lavender-deep" />
+          <Logo class="w-24 h-10 text-lavender-deep" />
         </div>
         <span v-text="'All rights reserved.'" />
       </div>
