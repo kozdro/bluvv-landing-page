@@ -1,11 +1,11 @@
 <template>
-  <section class="container py-16">
-    <h2 class="mb-12 text-center" v-text="'Solving what’s missing in Beauty eCommerce'" />
-    <div ref="flipRef" class="flex gap-8">
+  <section class="container py-10 md:py-16">
+    <h2 class="mb-6 md:mb-12 text-center" v-text="'Solving what’s missing in Beauty eCommerce'" />
+    <div ref="flipRef" class="flex flex-col md:flex-row gap-6 md:gap-8">
       <div
         v-for="(problem, index) in problems"
         :key="index"
-        class="flip-card basis-1/4 h-96 cursor-pointer"
+        class="flip-card md:basis-1/4 h-80 md:h-96 cursor-pointer"
         @click="toggleFlip(index)"
       >
         <div class="flip-card-inner relative w-full h-full transition-transform duration-700" :class="{ 'rotate-y': flippedStates[index] }">

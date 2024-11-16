@@ -2,7 +2,7 @@
   <header class="sticky top-0 z-50 transition-all duration-300" :class="scrolled ? 'bg-white' : 'bluvv-gradient'">
     <div class="container flex md:hidden h-[70px] justify-between items-center">
       <RouterLink to="/">
-        <Logo />
+        <Logo class="text-lavender-deep h-[120px] w-40" />
       </RouterLink>
 
       <button @click="emit('showMobileMenu')">

@@ -1,12 +1,12 @@
 <template>
-  <section class="features py-16 relative z-10 bg-white">
+  <section class="features py-10 md:py-16 relative z-10 bg-white">
     <div class="container">
-      <h2 data-aos="fade-up" class="mb-12 text-black flex justify-center">
+      <h2 data-aos="fade-up" class="mb-6 md:mb-12 text-black block md:flex justify-center text-center">
         What makes
-        <Logo class="w-min h-16 text-lavender-deep relative bottom-4" />
+        <Logo class="inline-block w-min h-16 text-lavender-deep relative bottom-2 md:bottom-4" />
         unique?
       </h2>
-      <div class="flex flex-col gap-10">
+      <div class="flex flex-col gap-6 md:gap-10">
         <FeatureCard
           v-for="(feature, index) in features"
           :key="feature.title"

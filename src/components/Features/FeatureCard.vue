@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col md:flex-row items-center gap-10"
+    class="flex flex-col-reverse md:flex-row items-center md:gap-10"
     :class="{ 'md:flex-row-reverse': reverse }"
     :data-aos-delay="delay"
   >
@@ -12,7 +12,7 @@
       <img
         :src="image"
         :alt="title"
-        class="h-[400px]"
+        class="h-[280px] md:h-[400px]"
       >
     </div>
   </div>

@@ -1,8 +1,8 @@
 <template>
-  <footer class="bg-peach pt-16 pb-4">
-    <div class="container flex flex-col gap-8">
-      <div>
-        <h3 class="text-lavender-old" v-text="'Ready to join the revolution?'" />
+  <footer class="bg-peach pt-10 md:pt-16 pb-4">
+    <div class="container flex flex-col gap-6 md:gap-8">
+      <div class="flex flex-col md:block">
+        <h3 class="text-lavender-old mb-6 md:mb-12" v-text="'Ready to join the revolution?'" />
         <Button
           :width="ButtonWidth.Auto"
           :variant="ButtonVariant.Secondary"
@@ -11,9 +11,9 @@
         />
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-40 text-center md:text-left mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-40 mt-4">
         <div>
-          <h4 class="text-lavender-old" v-text="'About Us'" />
+          <h4 class="hidden md:block text-lavender-old" v-text="'About Us'" />
           <p>
             Bluvv is revolutionizing social eCommerce by combining video reviews, earnings by using the app, and our modern technologies (AI, AR). Our application empowers users with authentic insights and smarter purchasing decisions while fostering a thriving community of conscious shoppers and brands.
           </p>

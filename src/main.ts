@@ -8,7 +8,14 @@ import router from '@/router'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 
-createApp(App).use(router).mount('#app')
+import { createDeviceDetector } from 'next-vue-device-detector'
+
+const device = createDeviceDetector()
+
+createApp(App)
+  .use(device)
+  .use(router)
+  .mount('#app')
 
 AOS.init({
   duration: 800,
