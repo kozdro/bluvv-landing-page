@@ -19,20 +19,10 @@
     @touchend="removeActiveClass"
   >
     <slot>
-      <component
-        :is="leftIconComponent"
-        v-if="leftIcon"
-        class="mr-2.5"
-      />
       <span
         v-if="label"
         :class="{ 'blur-sm': loading }"
         v-text="label"
-      />
-      <component
-        :is="rightIconComponent"
-        v-if="rightIcon"
-        class="ml-2.5"
       />
     </slot>
   </component>
@@ -60,7 +50,7 @@ const ButtonWidthClasses = {
 const mobileActiveClasses = {
   [ButtonVariant.Primary]: ['bg-lavender-old'],
   [ButtonVariant.Secondary]: ['bg-lavender-old', 'border-lavender-old', 'text-white'],
-  [ButtonVariant.Outline]: ['text-primary'],
+  [ButtonVariant.OutlinePrimary]: ['text-primary'],
 }
 
 interface Props {
@@ -71,8 +61,6 @@ interface Props {
   width?: ButtonWidth
   variant?: ButtonVariant
   label?: string
-  rightIcon?: Icon
-  leftIcon?: Icon
 }
 
 const props = withDefaults(defineProps<Props>(), {

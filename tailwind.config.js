@@ -27,6 +27,7 @@ export default {
       },
       black: '#000000',
       white: '#FFFFFF',
+      red: '#CC071E'
     },
     fontFamily: {
       primary: ['Montserrat', 'sans-serif'],
