@@ -1,5 +1,5 @@
 <template>
-  <section class="bluvv-gradient flex justify-between items-center py-16 text-white relative">
+  <section class="bluvv-gradient flex justify-between items-center py-16 text-white relative overflow-hidden">
     <div class="container flex flex-col md:flex-row md:gap-10 mt-10 mb-0 md:my-28">
       <div class="md:basis-1/2">
         <h1 v-text="'Transforming Beauty eCommerce'" />
