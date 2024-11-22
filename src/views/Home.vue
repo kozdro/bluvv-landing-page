@@ -3,7 +3,7 @@
   <Features />
   <Problems />
   <CTA />
-  <FAQ class="container" />
+  <FAQ />
 </template>
 
 <script setup lang="ts">

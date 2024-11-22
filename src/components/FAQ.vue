@@ -1,5 +1,5 @@
 <template>
-  <section class="faq py-10 md:py-16 flex flex-col md:flex-row md:gap-20 text-black">
+  <section class="faq container py-10 md:py-16 flex flex-col md:flex-row md:gap-20 text-black">
     <h2 class="mb-6 md:mb-0 md:basis-1/3" v-text="'Frequently asked questions'" />
     <Accordion class="md:flex-1">
       <AccordionItem>
