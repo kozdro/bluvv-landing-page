@@ -20,7 +20,7 @@
           </p>
         </div>
 
-        <div class="mt-6 md:mt-0">
+        <div class="mt-6 md:mt-0 md:ml-20">
           <h4 class="text-lavender-old" v-text="'Quick Links'" />
           <ul class="flex flex-col gap-2">
             <li>

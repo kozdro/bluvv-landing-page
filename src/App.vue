@@ -1,10 +1,12 @@
 <template>
-  <Header @showMobileMenu="showMobileMenu = !showMobileMenu" />
-  <main>
-    <RouterView />
-  </main>
-  <Footer />
-  <MobileMenu v-if="showMobileMenu" @closeMobileMenu="showMobileMenu = false" />
+  <div class="flex flex-col min-h-screen">
+    <Header @showMobileMenu="showMobileMenu = true" />
+    <main>
+      <RouterView />
+    </main>
+    <Footer />
+    <MobileMenu v-if="showMobileMenu" @closeMobileMenu="showMobileMenu = false" />
+  </div>
 </template>
 
 <script setup lang="ts">
