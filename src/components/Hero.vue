@@ -15,9 +15,9 @@
           <Button
             :variant="ButtonVariant.Tertiary"
             :width="ButtonWidth.Auto"
-            label="Get In Touch"
+            label="Get in Touch"
+            href="/contact"
             class="shadow-lg"
-            @click="handleContactClick"
           />
         </div>
       </div>
@@ -49,10 +49,6 @@ import { ButtonVariant, ButtonWidth } from '@/types'
 import { useDevice } from 'next-vue-device-detector'
 
 const device = useDevice()
-
-const handleContactClick = () => {
-  console.log('Contact button clicked')
-}
 
 const handleJoinClick = () => {
   console.log('Join Waitlist button clicked')

@@ -29,12 +29,14 @@
         />
       </nav>
 
-      <!-- <Button
-        href="/"
-        label="Sign Up"
+      <Button
+        :variant="ButtonVariant.Tertiary"
         :width="ButtonWidth.Auto"
-        class="inline-flex ml-auto"
-      /> -->
+        label="See Prototype"
+        href="https://kozdro.github.io/bluvv-app-mvp/#/"
+        target="_blank"
+        class="ml-auto"
+      />
     </div>
   </header>
 </template>
@@ -45,7 +47,7 @@ import { ref, onMounted } from 'vue'
 import Logo from '@/components/shared/Logo.vue'
 import Button from '@/components/shared/Button.vue'
 
-import { ButtonWidth } from '@/types'
+import { ButtonVariant, ButtonWidth } from '@/types'
 
 const emit = defineEmits(['showMobileMenu'])
 

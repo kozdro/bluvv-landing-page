@@ -20,6 +20,12 @@
         class="text-black hover:underline text-lg"
         v-text="link.text"
       />
+      <Button
+        :variant="ButtonVariant.Secondary"
+        label="See Prototype"
+        href="https://kozdro.github.io/bluvv-app-mvp/#/"
+        target="_blank"
+      />
     </nav>
   </div>
 </template>
@@ -28,7 +34,7 @@
 import Logo from '@/components/shared/Logo.vue'
 import Button from '@/components/shared/Button.vue'
 
-import { ButtonWidth } from '@/types'
+import { ButtonVariant } from '@/types'
 
 const emit = defineEmits(['closeMobileMenu'])
 

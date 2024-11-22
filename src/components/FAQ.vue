@@ -18,18 +18,35 @@
         <template #title>
           How can I invest in Bluvv?
         </template>
-        <p v-text="'Reach out to us through the contact page to discuss investment opportunities and learn more about our vision.'" />
+        <p>
+          Reach out to us through the
+          <RouterLink
+            to="/contact"
+            class="underline hover:text-lavender-gray"
+            v-text="'contact page'"
+          />
+          to discuss investment opportunities and learn more about our vision.
+        </p>
       </AccordionItem>
       <AccordionItem>
         <template #title>
           How can brands join the Bluvv ecosystem?
         </template>
-        <p v-text="'Brands can partner with us to showcase products and engage with a conscious audience. Contact us for details.'" />
+        <p>
+          Brands can partner with us to showcase products and engage with a conscious audience.
+          <RouterLink
+            to="/contact"
+            class="underline hover:text-lavender-gray"
+            v-text="'Contact us'"
+          />
+          for details.
+        </p>
       </AccordionItem>
       <AccordionItem>
         <template #title>
           When will Bluvv be available to users?
         </template>
+        <!-- TODO: add newsletter handling -->
         <p v-text="'Bluvv is currently in the pre-launch phase. Sign up for updates to be among the first to experience it.'" />
       </AccordionItem>
     </Accordion>

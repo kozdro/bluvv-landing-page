@@ -1,5 +1,5 @@
 <template>
-  <Header @showMobileMenu="showMobileMenu = true" />
+  <Header @showMobileMenu="showMobileMenu = !showMobileMenu" />
   <main>
     <RouterView />
   </main>

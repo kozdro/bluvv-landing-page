@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col text-center text-lavender-old font-secondary text-sm mt-6 md:mt-0">
+      <div class="flex flex-col text-center text-lavender-old font-secondary text-sm mt-6">
         <div class="flex justify-center items-center">
           © {{ new Date().getFullYear() }}
           <Logo class="w-24 h-10 text-lavender-deep" />

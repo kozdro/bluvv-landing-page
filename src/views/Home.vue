@@ -1,11 +1,9 @@
 <template>
-  <main>
-    <Hero />
-    <Features />
-    <Problems />
-    <CTA />
-    <FAQ class="container" />
-  </main>
+  <Hero />
+  <Features />
+  <Problems />
+  <CTA />
+  <FAQ class="container" />
 </template>
 
 <script setup lang="ts">
