@@ -30,7 +30,7 @@
       </nav>
 
       <Button
-        :variant="ButtonVariant.Tertiary"
+        :variant="scrolled ? ButtonVariant.OutlinePrimary : ButtonVariant.Tertiary"
         :width="ButtonWidth.Auto"
         label="See Prototype"
         href="https://kozdro.github.io/bluvv-app-mvp/#/"

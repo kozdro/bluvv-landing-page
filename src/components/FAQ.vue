@@ -46,14 +46,28 @@
         <template #title>
           When will Bluvv be available to users?
         </template>
-        <!-- TODO: add newsletter handling -->
-        <p v-text="'Bluvv is currently in the pre-launch phase. Sign up for updates to be among the first to experience it.'" />
+        <p>
+          Bluvv is currently in the pre-launch phase.
+          <button
+            class="underline hover:text-lavender-gray"
+            v-text="'Sign up'"
+            @click="isWaitlistModalVisible = true"
+          />
+          for updates to be among the first to experience it.
+        </p>
       </AccordionItem>
     </Accordion>
+
+    <WaitlistModal v-if="isWaitlistModalVisible" @close="isWaitlistModalVisible = false" />
   </section>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
 import Accordion from '@/components/shared/Accordion/Accordion.vue'
 import AccordionItem from '@/components/shared/Accordion/AccordionItem.vue'
+import WaitlistModal from '@/components/Modals/WaitlistModal.vue'
+
+const isWaitlistModalVisible = ref<boolean>(false)
 </script>

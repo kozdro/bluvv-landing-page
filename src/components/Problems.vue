@@ -1,6 +1,6 @@
 <template>
   <section class="container py-10 md:py-16">
-    <h2 class="mb-6 md:mb-12 text-center" v-text="'Solving what’s missing in Beauty eCommerce'" />
+    <h2 class="mb-6 md:mb-12 text-center" v-text="'Solving what\'s missing in Beauty eCommerce'" />
     <div ref="flipRef" class="flex flex-col md:flex-row gap-6 md:gap-8">
       <div
         v-for="(problem, index) in problems"
@@ -10,20 +10,12 @@
       >
         <div class="flip-card-inner relative w-full h-full transition-transform duration-700" :class="{ 'rotate-y': flippedStates[index] }">
           <div class="flip-card-front">
-            <img
-              :src="problem.icon"
-              :alt="problem.title"
-              class="w-20 h-20 mb-4"
-            >
+            <component :is="problem.icon" class="w-20 h-20 mb-4" />
             <h3 class="h-[108px]" v-text="problem.title" />
             <p class="mb-0" v-text="problem.description" />
           </div>
           <div class="flip-card-back">
-            <img
-              :src="solutions[index]?.icon"
-              :alt="solutions[index]?.title"
-              class="w-20 h-20 mb-6"
-            >
+            <component :is="solutions[index]?.icon" class="w-20 h-20 mb-6" />
             <h3
               class="h-[108px]"
               :style="{ color: headingColors[index] }"

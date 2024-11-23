@@ -11,7 +11,7 @@
         :key="feature.title"
         :title="feature.title"
         :description="feature.description"
-        :image="feature.image"
+        :icon="feature.image"
         :reverse="index % 2 !== 0"
         :delay="(index + 1) * 100"
         data-aos="fade-up"
@@ -24,49 +24,43 @@
 import Logo from '@/components/shared/Logo.vue'
 import FeatureCard from '@/components/Features/FeatureCard.vue'
 
-import VideoReviewIcon from '@/assets/icons/VideoReview.svg'
-import EarnMoneyIcon from '@/assets/icons/EarnMoney.svg'
-import ARIcon from '@/assets/icons/AR.png'
-import VoiceAssistantIcon from '@/assets/icons/VoiceAssistant.svg'
-import EarnIcon from '@/assets/icons/Earn.svg'
-import AIIcon from '@/assets/icons/AI.svg'
-import CommunityIcon from '@/assets/icons/Community.svg'
+import { Icon } from '@/types'
 
 const features = [
   {
     title: 'Authentic video reviews',
     description: 'Discover real opinions and share your own through engaging and trustworthy video reviews.',
-    image: VideoReviewIcon,
+    image: Icon.VideoReview,
   },
   {
     title: 'Earn money from videos and lives',
     description: 'Monetize your reviews by earning cash for published videos and live-streaming sessions. Your opinions matter!',
-    image: EarnMoneyIcon,
+    image: Icon.EarnMoney,
   },
   {
     title: 'AR Try-Ons',
     description: 'Experience products in real-time with advanced augmented reality technology — no guesswork, just confidence!',
-    image: ARIcon,
+    image: Icon.AR,
   },
   {
     title: 'Find products with a Voice Assistant',
-    description: 'Simplify your shopping journey with our AI-powered voice assistant. Say what you need, and we’ll find it for you!',
-    image: VoiceAssistantIcon,
+    description: 'Simplify your shopping journey with our AI-powered voice assistant. Say what you need, and we\'ll find it for you!',
+    image: Icon.VoiceAssistant,
   },
   {
     title: 'Earn while you shop',
     description: 'Actively engage with the app, collect in-app currency, and redeem it with every order. Turn your activity into savings!',
-    image: EarnIcon,
+    image: Icon.Earn,
   },
   {
     title: 'Personalized recommendations just for you',
     description: 'Receive suggestions tailored to your unique preferences, powered by cutting-edge artificial intelligence.',
-    image: AIIcon,
+    image: Icon.AI,
   },
   {
     title: 'Be part of a thriving Community',
     description: 'Connect with like-minded users, share experiences, and help shape a vibrant, engaged community.',
-    image: CommunityIcon,
+    image: Icon.Community,
   },
 ]
 </script>

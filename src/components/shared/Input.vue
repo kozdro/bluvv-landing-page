@@ -50,7 +50,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, useAttrs, useSlots } from 'vue'
+import { ref, computed, useAttrs } from 'vue'
 
 import FormFieldLabel from '@/components/shared/FormFieldLabel.vue'
 
@@ -73,7 +73,6 @@ const props = withDefaults(defineProps<Props>(), {
   label: '',
   required: false,
   type: 'text',
-  modelValue: '',
 })
 
 const emit = defineEmits<{
@@ -83,7 +82,6 @@ const emit = defineEmits<{
   (e: 'focus'): void,
 }>()
 
-const slots = useSlots()
 const attrs = useAttrs()
 
 const localValue = ref(props.modelValue)

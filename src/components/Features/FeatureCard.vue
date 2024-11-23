@@ -8,24 +8,26 @@
       <h3 class="text-primary" v-text="title" />
       <p class="text-lg" v-text="description" />
     </div>
-    <div class="md:basis-1/2 flex items-center justify-center">
-      <img
-        :src="image"
-        :alt="title"
-        class="h-[280px] md:h-[400px]"
-      >
+    <div class="md:basis-1/2 flex items-center justify-center max-w-screen">
+      <component :is="iconComponent" class="h-[280px] md:h-[400px] w-full" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import getIcon from '@/helpers/getIcon'
+
+import { Icon } from '@/types'
+
 interface Props {
   title: string
   description: string
-  image: string
+  icon: Icon
   reverse: boolean
   delay: number
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+const iconComponent = getIcon(props.icon)
 </script>
