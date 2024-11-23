@@ -1,16 +1,25 @@
 <template>
   <section class="container py-6 md:py-10">
-    <h2 class="text-primary">Send us a message</h2>
-    <form @submit.prevent="handleSubmit" class="md:w-1/2 flex flex-col gap-4 mt-10">
+    <h2 class="text-primary" v-text="'Send Us a messege'" />
+    <p
+      v-if="successMessage"
+      class="text-lg text-green font-medium mt-8 !mb-0"
+      v-text="successMessage"
+    />
+    <form @submit.prevent="submitForm" class="md:w-1/2 flex flex-col gap-4 mt-10">
       <Input
         v-model="form.name"
         label="Name"
+        id="name"
+        name="name"
         required
         :error-message="v$.name.$error ? nameError : ''"
       />
       <Input
         v-model="form.email"
         label="Email"
+        id="email"
+        name="email"
         type="email"
         required
         autocomplete="email"
@@ -23,11 +32,12 @@
           v-text="'Message*'"
         />
         <textarea
-          id="message"
           v-model="form.message"
+          id="message"
+          name="message"
           rows="6"
           placeholder="Your message"
-          class="w-full border border-gray rounded-lg transition duration-200 ease-in-out pl-3 p-2 focus:border-primary focus-within:border-primary focus:outline-0 focus-visible:outline-none placeholder:text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+          class="w-full border border-gray rounded-lg transition duration-200 ease-in-out pl-3 p-2 text-lavender-old focus:border-primary focus-within:border-primary focus:outline-0 focus-visible:outline-none placeholder:text-lavender-old disabled:opacity-50 disabled:cursor-not-allowed"
           :class="{ '!border-red': v$.message.$error }"
         />
         <span
@@ -36,7 +46,16 @@
           v-text="messageError"
         />
       </div>
-      <Button type="submit" label="Send message" />
+      <Button
+        type="submit"
+        label="Send message"
+        :loading="isLoading"
+      />
+      <p
+        v-if="errorMessage"
+        class="text-red"
+        v-text="errorMessage"
+      />
     </form>
   </section>
 </template>
@@ -55,12 +74,16 @@ const form = ref({
   email: '',
   message: ''
 })
+const isLoading = ref<boolean>(false)
+const successMessage = ref<string>('')
+const errorMessage = ref<string>('')
 
 const rules = {
   name: { required },
   email: { required, email },
   message: { required }
 }
+const formspreeAction = import.meta.env.VITE_FORMSPREE_ACTION
 
 const v$ = useVuelidate(rules, form)
 
@@ -77,10 +100,41 @@ const getEmailErrorMessage = computed(() => {
   }
 })
 
-const handleSubmit = () => {
+const submitForm = async() => {
   v$.value.$touch()
-  if (!v$.value.$invalid) {
-    console.log('Form submitted with values:', form.value)
+
+  if (v$.value.$invalid) return
+
+  try {
+    isLoading.value = true
+    successMessage.value = ''
+    errorMessage.value = ''
+
+    const formData = new FormData()
+    formData.append('name', form.value.name)
+    formData.append('email', form.value.email)
+    formData.append('message', form.value.message)
+
+    const response = await fetch(formspreeAction, {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' },
+    })
+
+    if (response.ok) {
+      successMessage.value = 'Thank you! Your message has been sent.'
+      form.value.name = ''
+      form.value.email = ''
+      form.value.message = ''
+      v$.value.$reset()
+    } else {
+      errorMessage.value = 'Something went wrong. Please try again.'
+    }
+  } catch (error) {
+    console.error(error)
+    errorMessage.value = 'Failed to send the message. Please try again.'
+  } finally {
+    isLoading.value = false
   }
 }
 </script>

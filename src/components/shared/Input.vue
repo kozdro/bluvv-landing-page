@@ -34,7 +34,6 @@
         :disabled="disabled"
         :type="type"
         class="w-full bg-transparent focus:outline-0 focus-visible:outline-none text-base leading-normal text-lavender-old placeholder:text-lavender-old disabled:text-gray-100 truncate"
-        @input="handleInputChange"
         @blur="handleBlur"
         @focus="handleFocus"
       >
@@ -84,19 +83,21 @@ const emit = defineEmits<{
 
 const attrs = useAttrs()
 
-const localValue = ref(props.modelValue)
 const isFocused = ref(false)
+
+const localValue = computed({
+  get() {
+    return props.modelValue
+  },
+  set(value) {
+    emit('update:modelValue', value)
+  }
+})
 
 const isAffected = computed(() => !!props.modelValue || isFocused.value || attrs.placeholder)
 
 const inputAriaLabel = computed(() => `${props.ariaLabel || props.label || 'input'}`)
 
-const handleInputChange = (event) => {
-  localValue.value = event.target.value
-
-  emit('update:modelValue', event.target.value)
-  emit('input', event.target.value)
-}
 const handleFocus = () => {
   emit('focus')
   isFocused.value = true
