@@ -9,7 +9,7 @@
       <p class="text-lg" v-text="description" />
     </div>
     <div class="md:basis-1/2 flex items-center justify-center max-w-screen">
-      <component :is="iconComponent" class="h-[280px] md:h-[400px] w-full" />
+      <component :is="iconComponent" class="h-[280px] md:h-[400px] w-full" filled />
     </div>
   </div>
 </template>

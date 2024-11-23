@@ -7,9 +7,9 @@
 <script setup lang="ts">
 import { ref, provide } from 'vue'
 
-const activeItem = ref(null)
+const activeItem = ref<string | null>(null)
 
-const toggleItem = (item) => {
+const toggleItem = (item: string) => {
   if (activeItem.value === item) {
     activeItem.value = null
   } else {

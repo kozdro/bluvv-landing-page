@@ -4,6 +4,6 @@ import { Icon } from '@/types'
 
 export default (iconName: Icon) => {
   return iconName
-    ? defineAsyncComponent(() => import(`@/assets/icons/${iconName}.svg`))
+    ? defineAsyncComponent(() => import(`@/assets/icons/${iconName}.svg?skipsvgo`))
     : null
 }

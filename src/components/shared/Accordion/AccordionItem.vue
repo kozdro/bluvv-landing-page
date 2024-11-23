@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { inject, computed } from 'vue'
+import { inject, computed, Ref, onBeforeMount } from 'vue'
 
 const { activeItem, toggleItem } = inject('accordion') as {
   activeItem: Ref<string | null>
@@ -44,13 +44,17 @@ const { activeItem, toggleItem } = inject('accordion') as {
 
 interface Props {
   id?: string
+  initiallyOpen?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  id: () => `ai-${Math.random().toString(36).substr(2, 9)}`
+  id: () => `ai-${Math.random().toString(36).substr(2, 9)}`,
+  initiallyOpen: false,
 })
 
 const isOpened = computed(() => activeItem.value === props.id)
 
 const toggle = () => toggleItem(props.id)
+
+onBeforeMount(() => props.initiallyOpen && toggle())
 </script>

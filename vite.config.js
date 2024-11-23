@@ -18,9 +18,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  optimizeDeps: {
-    include: ['vue', 'vue-svg-loader'],
-  },
   base: '/bluvv-landing-page/',
   server: {
     historyApiFallback: true,

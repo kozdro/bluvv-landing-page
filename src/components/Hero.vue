@@ -40,7 +40,7 @@ import { ref } from 'vue'
 import Button from '@/components/shared/Button.vue'
 import WaitlistModal from '@/components/Modals/WaitlistModal.vue'
 
-import Mockups from '@/assets/Mockups.svg'
+import Mockups from '@/assets/Mockups.svg?skipsvgo'
 
 import { ButtonVariant, ButtonWidth } from '@/types'
 
