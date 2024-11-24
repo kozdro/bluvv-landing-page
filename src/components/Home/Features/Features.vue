@@ -13,18 +13,22 @@
         :description="feature.description"
         :icon="feature.image"
         :reverse="index % 2 !== 0"
-        :offset="300 + (index * 200)"
-        :delay="index * 200"
+        :offset="device.mobile ? 300 : 300 + (index * 200)"
+        :delay="device.mobile ? 100 : index * 200"
       />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { useDevice } from 'next-vue-device-detector'
+
 import Logo from '@/components/shared/Logo.vue'
 import FeatureCard from '@/components/Home/Features/FeatureCard.vue'
 
 import { Icon } from '@/types'
+
+const device = useDevice()
 
 const features = [
   {

@@ -13,7 +13,8 @@ import { createDeviceDetector } from 'next-vue-device-detector'
 const device = createDeviceDetector()
 
 AOS.init({
-  once: true,
+  once: false,
+  mirror: true,
 })
 
 createApp(App)
