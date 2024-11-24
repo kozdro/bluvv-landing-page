@@ -5,7 +5,7 @@
       <Logo class="inline-block w-40 h-16 text-lavender-deep relative bottom-2 md:bottom-4" />
       unique?
     </h2>
-    <div class="flex flex-col gap-6 md:gap-10">
+    <div class="flex flex-col gap-6 md:gap-10 overflow-hidden">
       <FeatureCard
         v-for="(feature, index) in features"
         :key="index"
