@@ -1,6 +1,6 @@
 <template>
   <div class="team container py-10 md:py-16">
-    <h2 class="mb-6 md:mb-12 text-center" v-text="'Meet the Team'" />
+    <h2 class="mb-6 md:mb-12" v-text="'Meet the Team'" />
     <div class="grid md:grid-cols-3 gap-8 text-center">
       <div>
         <div
