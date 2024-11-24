@@ -3,7 +3,7 @@
     <div class="bluvv-gradient text-white py-10 md:py-16">
       <div class="container md:my-10">
         <h1 class="md:w-3/5" v-text="'Empowering conscious Beauty choices'" />
-        <p class="text-lg" v-text="'Discover how Bluvv bridges technology and community to revolutionize the way we shop for beauty products.'" />
+        <p class="md:w-1/2 text-lg" v-text="'Discover how Bluvv bridges technology and community to revolutionize the way we shop for beauty products.'" />
       </div>
     </div>
     <MissionVisionGoal />
