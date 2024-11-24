@@ -33,7 +33,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../tailwind.config'
+import tailwindConfig from '../../../tailwind.config'
 
 import FakeIcon from '@/assets/icons/Fake.svg?skipsvgo'
 import DecisionIcon from '@/assets/icons/Decision.svg?skipsvgo'

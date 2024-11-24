@@ -15,6 +15,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 import getIcon from '@/helpers/getIcon'
 
 import { Icon } from '@/types'
@@ -29,5 +31,5 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const iconComponent = getIcon(props.icon)
+const iconComponent = computed(() => getIcon(props.icon))
 </script>

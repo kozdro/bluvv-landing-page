@@ -6,6 +6,7 @@
     </main>
     <Footer />
     <MobileMenu v-if="showMobileMenu" @closeMobileMenu="showMobileMenu = false" />
+    <WaitlistModal v-if="isWaitlistModalVisible" @close="isWaitlistModalVisible = false" />
   </div>
 </template>
 
@@ -16,8 +17,12 @@ import { useRoute } from 'vue-router'
 import Header from '@/components/layout/Header.vue'
 import Footer from '@/components/layout/Footer.vue'
 import MobileMenu from '@/components/layout/MobileMenu.vue'
+import WaitlistModal from '@/components/Modals/WaitlistModal.vue'
+
+import useWaitlist from '@/composables/useWaitlist'
 
 const route = useRoute()
+const { isWaitlistModalVisible } = useWaitlist()
 
 const showMobileMenu = ref<boolean>(false)
 

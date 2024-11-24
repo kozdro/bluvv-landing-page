@@ -2,6 +2,7 @@ import { ref } from 'vue'
 
 // import axios from 'axios'
 const mailchimpAction = import.meta.env.VITE_MAILCHIMP_ACTION
+const isWaitlistModalVisible = ref<boolean>(false)
 
 export default () => {
   const isLoading = ref<boolean>(false)
@@ -73,6 +74,7 @@ export default () => {
   // }
 
   return {
+    isWaitlistModalVisible,
     isLoading,
     errorMessage,
     isSubmitted,

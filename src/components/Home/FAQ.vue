@@ -57,17 +57,14 @@
         </p>
       </AccordionItem>
     </Accordion>
-
-    <WaitlistModal v-if="isWaitlistModalVisible" @close="isWaitlistModalVisible = false" />
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 import Accordion from '@/components/shared/Accordion/Accordion.vue'
 import AccordionItem from '@/components/shared/Accordion/AccordionItem.vue'
-import WaitlistModal from '@/components/Modals/WaitlistModal.vue'
 
-const isWaitlistModalVisible = ref<boolean>(false)
+import useWaitlist from '@/composables/useWaitlist'
+
+const { isWaitlistModalVisible } = useWaitlist()
 </script>

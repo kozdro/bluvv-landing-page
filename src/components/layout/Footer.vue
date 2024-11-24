@@ -2,14 +2,23 @@
   <footer class="bg-peach pt-10 md:pt-16 pb-4">
     <div class="container flex flex-col gap-6 md:gap-8">
       <div class="flex flex-col md:block">
-        <h3 class="text-lavender-old mb-6 md:mb-12" v-text="'Ready to join the revolution?'" />
-        <Button
-          v-if="$route.path !== '/contact'"
-          :width="ButtonWidth.Auto"
-          :variant="ButtonVariant.Secondary"
-          href="/contact"
-          label="Contact Us"
-        />
+        <h3 class="text-lavender-old mb-6" v-text="'Ready to join the revolution?'" />
+        <div class="flex flex-col md:flex-row gap-4">
+          <Button
+            v-if="$route.path !== '/contact'"
+            :width="ButtonWidth.Auto"
+            :variant="ButtonVariant.Secondary"
+            href="/contact"
+            label="Contact Us"
+          />
+          <Button
+            v-if="$route.path !== '/about-us'"
+            :width="ButtonWidth.Auto"
+            :variant="ButtonVariant.OutlineSecondary"
+            label="Join the Waitlist"
+            @click="isWaitlistModalVisible = true"
+          />
+        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 md:gap-40 mt-4">
@@ -66,6 +75,8 @@ import Button from '@/components/shared/Button.vue'
 import Logo from '@/components/shared/Logo.vue'
 
 import { ButtonWidth, ButtonVariant } from '@/types'
+import useWaitlist from '@/composables/useWaitlist'
 
 const device = useDevice()
+const { isWaitlistModalVisible } = useWaitlist()
 </script>

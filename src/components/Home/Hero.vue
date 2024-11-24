@@ -29,24 +29,19 @@
     <div v-if="!device.mobile" class="hidden md:block absolute -bottom-8 right-20">
       <Mockups class="scale-110" />
     </div>
-
-    <WaitlistModal v-if="isWaitlistModalVisible" @close="isWaitlistModalVisible = false" />
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 import Button from '@/components/shared/Button.vue'
-import WaitlistModal from '@/components/Modals/WaitlistModal.vue'
 
 import Mockups from '@/assets/Mockups.svg?skipsvgo'
 
 import { ButtonVariant, ButtonWidth } from '@/types'
+import useWaitlist from '@/composables/useWaitlist'
 
 import { useDevice } from 'next-vue-device-detector'
 
 const device = useDevice()
-
-const isWaitlistModalVisible = ref<boolean>(false)
+const { isWaitlistModalVisible } = useWaitlist()
 </script>

@@ -7,9 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import Hero from '@/components/Hero.vue'
-import Features from '@/components/Features/Features.vue'
-import Problems from '@/components/Problems.vue'
-import CTA from '@/components/CTA.vue'
-import FAQ from '@/components/FAQ.vue'
+import Hero from '@/components/Home/Hero.vue'
+import Features from '@/components/Home/Features/Features.vue'
+import Problems from '@/components/Home/Problems.vue'
+import CTA from '@/components/Home/CTA.vue'
+import FAQ from '@/components/Home/FAQ.vue'
 </script>

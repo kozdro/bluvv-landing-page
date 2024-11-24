@@ -38,7 +38,7 @@ const ButtonVariantClasses = {
   [ButtonVariant.Secondary]: 'bg-secondary text-black hover:bg-secondary/80 focus:ring-2 focus:ring-secondary/50 active:bg-secondary/70',
   [ButtonVariant.Tertiary]: 'bg-white text-primary hover:bg-white/80 focus:ring-2 focus:ring-secondary/50 active:bg-primary active:text-white',
   [ButtonVariant.OutlinePrimary]: 'border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary/50 active:bg-primary/70',
-  [ButtonVariant.OutlineSecondary]: 'border-2 border-secondary text-secondary hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary/50 active:bg-primary/70',
+  [ButtonVariant.OutlineSecondary]: 'border-2 border-secondary text-black hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary/50 active:bg-primary/70',
   [ButtonVariant.OutlineTertiary]: 'border-2 border-white text-white hover:opacity-70 focus:ring-2 focus:ring-primary active:bg-white active:text-primary active:opacity-100',
 }
 

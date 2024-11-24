@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import Logo from '@/components/shared/Logo.vue'
-import FeatureCard from '@/components/Features/FeatureCard.vue'
+import FeatureCard from '@/components/Home/Features/FeatureCard.vue'
 
 import { Icon } from '@/types'
 

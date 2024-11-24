@@ -18,6 +18,6 @@ createApp(App)
   .mount('#app')
 
 AOS.init({
-  duration: 800,
   once: true,
+  offset: 200,
 })
